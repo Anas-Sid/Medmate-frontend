@@ -18,12 +18,13 @@ export default function DoctorList({ searchQuery = "", onDoctorClick }) {
 
   // ✅ Filter by name or specialization
   const filteredDoctors = doctors.filter((doctor) => {
-    const fullName = `${doctor.firstName} ${doctor.lastName}`.toLowerCase();
-    return (
-      fullName.includes(searchQuery.toLowerCase()) ||
-      doctor.specialization.toLowerCase().includes(searchQuery.toLowerCase())
-    );
-  });
+  const fullName = `${doctor.firstName || ''} ${doctor.lastName || ''}`.toLowerCase();
+  const specialization = (doctor.specialization || '').toLowerCase();
+  return (
+    fullName.includes(searchQuery.toLowerCase()) ||
+    specialization.includes(searchQuery.toLowerCase())
+  );
+});
 
   return (
     <div className="bg-white w-[485px] h-full rounded-4xl p-4 shadow-md ml-10 mt-10">

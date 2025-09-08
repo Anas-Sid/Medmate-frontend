@@ -25,7 +25,7 @@ export default function ChatLayout({ currentUser: passedUser, role: passedRole }
       {/* Main chat area */}
       <div className="flex flex-1 overflow-hidden">
         {/* Left Chat Sidebar */}
-        <div className="w-[313px] h-[482px] border-r bg-white overflow-y-auto rounded-bl-4xl">
+        <div className="w-[313px] h-[460px] border-r bg-white overflow-y-auto rounded-bl-4xl">
           <ChatSidebar
             userId={userId}
             userModel={userModel}
@@ -34,7 +34,7 @@ export default function ChatLayout({ currentUser: passedUser, role: passedRole }
         </div>
 
         {/* Right Chat Box */}
-        <div className="flex-1 flex flex-col w-[680px] h-[482px] rounded-b-4xl">
+        <div className="flex-1 flex flex-col w-[680px] h-[460px] rounded-b-4xl">
           {selectedChat ? (
             <ChatBox
               currentUser={currentUser}

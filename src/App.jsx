@@ -66,7 +66,7 @@ export default function App() {
         path="/doctor/:id"
         element={
           <ProtectedRoute>
-            <DoctorBookingCard />
+            <Bookappointment />
           </ProtectedRoute>
         }
       />
