@@ -53,7 +53,7 @@ export default function AvailibiltySetForm({ onAvailabilityAdded }) {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/api/availability', {
+      const response = await fetch('https://medmate-backend-ou7e.onrender.com/api/availability', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

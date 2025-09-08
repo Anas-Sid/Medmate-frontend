@@ -18,7 +18,7 @@ export default function ChatWindow({ currentUser, selectedUser }) {
 
   const fetchMessages = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/chat/messages`, {
+      const res = await axios.get(`https://medmate-backend-ou7e.onrender.com/api/chat/messages`, {
         params: {
           user1Id: currentUser.id,
           user2Id: selectedUser._id,
@@ -35,7 +35,7 @@ export default function ChatWindow({ currentUser, selectedUser }) {
     if (!newMessage.trim()) return;
 
     try {
-      const res = await axios.post(`http://localhost:5000/api/chat/message`, {
+      const res = await axios.post(`https://medmate-backend-ou7e.onrender.com/api/chat/message`, {
         senderId: currentUser.id,
         receiverId: selectedUser._id,
         senderModel: currentUser.model,

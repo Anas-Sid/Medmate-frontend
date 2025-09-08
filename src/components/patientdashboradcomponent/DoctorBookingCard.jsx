@@ -18,7 +18,7 @@ export default function DoctorBookingCard() {
   if (!patient || !selectedDate || !selectedTime) return alert('Missing data');
 
   try {
-    const response = await fetch('http://localhost:5000/api/appointments', {
+    const response = await fetch('https://medmate-backend-ou7e.onrender.com/api/appointments', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -44,7 +44,7 @@ export default function DoctorBookingCard() {
 useEffect(() => {
   if (!doctor || !selectedDate) return;
 
-  fetch(`http://localhost:5000/api/appointments/booked?doctorId=${doctor._id}&date=${selectedDate}`)
+  fetch(`https://medmate-backend-ou7e.onrender.com/api/appointments/booked?doctorId=${doctor._id}&date=${selectedDate}`)
     .then((res) => res.json())
     .then((data) => setBookedAppointments(data))
     .catch((err) => console.error('Failed to load booked slots:', err));
@@ -65,7 +65,7 @@ const bookedTimes = bookedAppointments.map((a) => a.time);
   useEffect(() => {
     if (!doctor || !doctor._id) return;
 
-    fetch(`http://localhost:5000/api/availability?doctorId=${doctor._id}`)
+    fetch(`https://medmate-backend-ou7e.onrender.com/api/availability?doctorId=${doctor._id}`)
       .then((res) => res.json())
       .then((data) => setAvailabilityData(data))
       .catch((err) => console.error('Failed to load availability:', err));

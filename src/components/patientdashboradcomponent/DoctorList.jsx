@@ -7,7 +7,7 @@ export default function DoctorList({ searchQuery = "", onDoctorClick }) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/doctor/all')
+    fetch('https://medmate-backend-ou7e.onrender.com/api/doctor/all')
       .then((res) => res.json())
       .then((data) => setDoctors(data))
       .catch((err) => console.error('Failed to fetch doctors:', err));

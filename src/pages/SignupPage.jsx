@@ -30,8 +30,8 @@ export default function SignupPage() {
 
     const url =
       role === 'doctor'
-        ? 'http://localhost:5000/api/doctor/signup'
-        : 'http://localhost:5000/api/patient/signup';
+        ? 'https://medmate-backend-ou7e.onrender.com/api/doctor/signup'
+        : 'https://medmate-backend-ou7e.onrender.com/api/patient/signup';
 
     const payload =
       role === 'doctor'

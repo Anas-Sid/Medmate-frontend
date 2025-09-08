@@ -14,8 +14,8 @@ export default function UserListModal({ userId, role, onClose }) {
       console.log("isDoctor:", isDoctor, "isPatient:", isPatient);
       console.log("Fetching from:", isDoctor ? '/api/patient/all' : '/api/doctor/all');
       const endpoint = isDoctor 
-        ? 'http://localhost:5000/api/patient/all' 
-        : 'http://localhost:5000/api/doctor/all';
+        ? 'https://medmate-backend-ou7e.onrender.com/api/patient/all' 
+        : 'https://medmate-backend-ou7e.onrender.com/doctor/all';
       const res = await axios.get(endpoint);
       
       if (Array.isArray(res.data)) {
@@ -59,7 +59,7 @@ export default function UserListModal({ userId, role, onClose }) {
       return;
     }
 
-    await axios.post('http://localhost:5000/api/chat/request', {
+    await axios.post('https://medmate-backend-ou7e.onrender.com/api/chat/request', {
       senderId: userId,
       receiverId,
       senderModel: isDoctor ? 'Doctor' : 'Patient',

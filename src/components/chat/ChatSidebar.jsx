@@ -22,7 +22,7 @@ export default function ChatSidebar({ userId, userModel, onSelectChat }) {
   const fetchAcceptedChats = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/chat/connections/${userId}?userModel=${userModel}`
+        `https://medmate-backend-ou7e.onrender.com/api/chat/connections/${userId}?userModel=${userModel}`
       );
       setChats(res.data);
     } catch (err) {

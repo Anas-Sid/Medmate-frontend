@@ -7,7 +7,7 @@ export default function AllPatientList() {
     const doctor = JSON.parse(localStorage.getItem('doctor'));
     if (!doctor?.id) return;
 
-    fetch(`http://localhost:5000/api/appointments/doctor/${doctor.id}/patients`)
+    fetch(`https://medmate-backend-ou7e.onrender.com/api/appointments/doctor/${doctor.id}/patients`)
       .then(res => res.json())
       .then(data => setPatients(data))
       .catch(err => console.error('Error loading all patient appointments:', err));

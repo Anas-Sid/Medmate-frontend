@@ -19,7 +19,7 @@ export default function PatientChat({ currentUser, role }) {
       </div>
 
       {/* Chat layout (takes remaining space) */}
-       <div className=" pr-[64px] flex-1 flex flex-col bg-[#3E36B0] h-[630px]  overflow-hidden pt-3 pb-3 pr-3 rounded-r-4xl -mt-6 pl-3">
+       <div className=" pr-[64px] flex-1 flex flex-col bg-[#3E36B0] h-[630px]  overflow-hidden pt-3 pb-3  rounded-r-4xl -mt-6 pl-3">
             {/* Chat layout (takes remaining space) */}
             <div className="flex-1">
               <ChatLayout currentUser={currentUser} role={role} />

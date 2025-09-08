@@ -18,7 +18,7 @@ export default function UpcomingAppointment() {
   useEffect(() => {
     if (!patient?.id) return;
 
-    fetch(`http://localhost:5000/api/appointments/patient/${patient.id}`)
+    fetch(`https://medmate-backend-ou7e.onrender.com/api/appointments/patient/${patient.id}`)
       .then(res => res.json())
       .then(data => setAppointments(data))
       .catch(err => console.error('Error fetching appointments:', err));
@@ -27,7 +27,7 @@ export default function UpcomingAppointment() {
   // Cancel a specific appointment
   const handleCancel = async (appointmentId) => {
     try {
-      const res = await fetch(`http://localhost:5000/api/appointments/${appointmentId}`, {
+      const res = await fetch(`https://medmate-backend-ou7e.onrender.com/api/appointments/${appointmentId}`, {
         method: 'DELETE',
       });
       if (res.ok) {
@@ -43,7 +43,7 @@ export default function UpcomingAppointment() {
   // Cancel all appointments for the patient
   const handleCancelAll = async () => {
     try {
-      const res = await fetch(`http://localhost:5000/api/appointments/patient/${patient.id}`, {
+      const res = await fetch(`https://medmate-backend-ou7e.onrender.com/api/appointments/patient/${patient.id}`, {
         method: 'DELETE',
       });
       if (res.ok) {

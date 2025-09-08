@@ -29,7 +29,7 @@ export default function ChatBox({ currentUser, selectedChat }) {
 
     const fetchMessages = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/chat/messages`, {
+        const res = await axios.get(`https://medmate-backend-ou7e.onrender.com/api/chat/messages`, {
           params: {
             user1Id: currentUser.id,
             user2Id: selectedChat._id,
@@ -100,7 +100,7 @@ export default function ChatBox({ currentUser, selectedChat }) {
 
     try {
       // Send to server first to get proper _id
-      const response = await axios.post('http://localhost:5000/api/chat/message', payload);
+      const response = await axios.post('https://medmate-backend-ou7e.onrender.com/api/chat/message', payload);
       
       // Emit to socket with the response data
       socket.emit('send_message', {

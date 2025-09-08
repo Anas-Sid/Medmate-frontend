@@ -28,8 +28,8 @@ export default function LoginPage() {
 
     const url =
       role === 'doctor'
-        ? 'http://localhost:5000/api/doctor/login'
-        : 'http://localhost:5000/api/patient/login';
+        ? 'https://medmate-backend-ou7e.onrender.com/api/doctor/login'
+        : 'https://medmate-backend-ou7e.onrender.com/api/patient/login';
 
     try {
       const response = await fetch(url, {

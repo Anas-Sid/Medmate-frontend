@@ -12,7 +12,7 @@ export default function ChatRequestModal({ userId, role, onClose }) {
 
   const fetchRequests = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/chat/requests/${userId}?userModel=${userModel}`);
+      const res = await axios.get(`https://medmate-backend-ou7e.onrender.com/api/chat/requests/${userId}?userModel=${userModel}`);
       setRequests(res.data);
     } catch (err) {
       console.error('Failed to fetch requests:', err);
@@ -21,7 +21,7 @@ export default function ChatRequestModal({ userId, role, onClose }) {
 
   const handleResponse = async (requestId, action) => {
     try {
-      await axios.put(`http://localhost:5000/api/chat/respond/${requestId}`, { action });
+      await axios.put(`https://medmate-backend-ou7e.onrender.com/api/chat/respond/${requestId}`, { action });
       setRequests((prev) => prev.filter((r) => r._id !== requestId));
     } catch (err) {
       console.error(`Failed to ${action} request:`, err);

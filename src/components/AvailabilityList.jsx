@@ -24,7 +24,7 @@ export default function AvailabilityList({ refreshTrigger }) {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/availability?doctorId=${doctor.id}`
+        `https://medmate-backend-ou7e.onrender.com/api/availability?doctorId=${doctor.id}`
       );
       const data = await response.json();
 
@@ -44,7 +44,7 @@ export default function AvailabilityList({ refreshTrigger }) {
       // Auto-delete expired
       for (const id of expired) {
         try {
-          await fetch(`http://localhost:5000/api/availability/${id}`, {
+          await fetch(`https://medmate-backend-ou7e.onrender.com/api/availability/${id}`, {
             method: 'DELETE',
           });
         } catch {
@@ -65,7 +65,7 @@ export default function AvailabilityList({ refreshTrigger }) {
     }
 
     try {
-      const response = await fetch(`http://localhost:5000/api/availability/${id}`, {
+      const response = await fetch(`https://medmate-backend-ou7e.onrender.com/api/availability/${id}`, {
         method: 'DELETE',
       });
 
@@ -115,7 +115,7 @@ export default function AvailabilityList({ refreshTrigger }) {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/availability/${editingItem._id}`,
+        `https://medmate-backend-ou7e.onrender.com/api/availability/${editingItem._id}`,
         {
           method: 'PUT',
           headers: {
